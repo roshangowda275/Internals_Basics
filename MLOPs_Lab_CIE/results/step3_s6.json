@@ -1,0 +1,7 @@
+{
+    "registered_model_name": "cloudpulse-response-time-ms-predictor",
+    "version": 1,
+    "run_id": "84a27667ad47446e9b71371b2c1f331f",
+    "source_metric": "mae",
+    "source_metric_value": 24.761296745384133
+}

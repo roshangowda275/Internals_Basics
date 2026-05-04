@@ -1,4 +1,22 @@
 {
+    "experiment_name": "cloudpulse-response-time-ms",
+    "models": [
+        {
+            "name": "Lasso",
+            "mae": 24.761296745384133,
+            "rmse": 36.954941924290395,
+            "r2": 0.5868702208395876,
+            "mape": 0.14791369703939086
+        },
+        {
+            "name": "GradientBoosting",
+            "mae": 59.54752691448082,
+            "rmse": 82.7779068379957,
+            "r2": -1.0728617299467373,
+            "mape": 0.29960477893678095
+        }
+    ],
     "best_model": "Lasso",
-    "rmse": 35.85673205870559
+    "best_metric_name": "mae",
+    "best_metric_value": 24.761296745384133
 }

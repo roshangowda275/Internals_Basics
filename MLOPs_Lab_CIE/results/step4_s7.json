@@ -1,0 +1,7 @@
+{
+    "registered_model_name": "cloudpulse-response-time-ms-predictor",
+    "alias_name": "champion",
+    "champion_version": 1,
+    "challenger_version": 2,
+    "action": "kept"
+}

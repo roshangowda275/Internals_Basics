@@ -1,0 +1,16 @@
+{
+    "health_endpoint": "/health",
+    "predict_endpoint": "/estimate",
+    "port": 8080,
+    "health_response": {
+        "status": "operational",
+        "service": "CloudPulse API"
+    },
+    "test_input": {
+        "request_size_kb": 242.0,
+        "server_load": 0.5,
+        "is_cached": 1,
+        "region_latency": 127
+    },
+    "prediction": 344.82386298253687
+}
