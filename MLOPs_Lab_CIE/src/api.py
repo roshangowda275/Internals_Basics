@@ -6,10 +6,9 @@ import sys
 from pathlib import Path
 
 import joblib
-import numpy as np
+import pandas as pd
 import uvicorn
 from fastapi import FastAPI
-from fastapi.testclient import TestClient
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -34,21 +33,23 @@ def health():
 
 @app.post("/estimate")
 def predict(data: InputData):
-    arr = np.array(
+    frame = pd.DataFrame(
         [
-            [
-                data.request_size_kb,
-                data.server_load,
-                data.is_cached,
-                data.region_latency,
-            ]
+            {
+                "request_size_kb": data.request_size_kb,
+                "server_load": data.server_load,
+                "is_cached": data.is_cached,
+                "region_latency": data.region_latency,
+            }
         ]
     )
-    pred = model.predict(arr)[0]
+    pred = model.predict(frame)[0]
     return {"prediction": float(pred)}
 
 
 def write_step2_json() -> None:
+    from fastapi.testclient import TestClient
+
     client = TestClient(app)
     health = client.get("/health").json()
     test_input = {

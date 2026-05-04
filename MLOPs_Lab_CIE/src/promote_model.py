@@ -69,7 +69,7 @@ def main() -> None:
         preds = challenger.predict(X_test)
         mae_v2 = float(mean_absolute_error(y_test, preds))
         mlflow.log_metric("mae", mae_v2)
-        mlflow.sklearn.log_model(challenger, "model")
+        mlflow.sklearn.log_model(challenger, name="model")
         run_id = run.info.run_id
 
     mv2 = mlflow.register_model(
